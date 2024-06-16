@@ -1,3 +1,4 @@
+import PostButton from "@/components/post-button";
 import createPost from "@/server/actions/create-post";
 import getPosts from "@/server/actions/get-posts";
 import Image from "next/image";
@@ -24,7 +25,7 @@ export default async function Home() {
           name="title"
           placeholder="Title"
         />
-        <button type="submit">Submit</button>
+        <PostButton />
       </form>
 
       <h1>Welcome to Next.js</h1>
