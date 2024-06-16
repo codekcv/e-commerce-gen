@@ -1,3 +1,4 @@
+import createPost from "@/server/actions/create-post";
 import getPosts from "@/server/actions/get-posts";
 import Image from "next/image";
 
@@ -15,6 +16,16 @@ export default async function Home() {
           <h2>{post.title}</h2>
         </div>
       ))}
+
+      <form action={createPost}>
+        <input
+          className="bg-black"
+          type="text"
+          name="title"
+          placeholder="Title"
+        />
+        <button type="submit">Submit</button>
+      </form>
 
       <h1>Welcome to Next.js</h1>
     </main>
