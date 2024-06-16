@@ -1,4 +1,5 @@
 import PostButton from "@/components/post-button";
+import { Button } from "@/components/ui/button";
 import createPost from "@/server/actions/create-post";
 import getPosts from "@/server/actions/get-posts";
 import Image from "next/image";
@@ -29,6 +30,7 @@ export default async function Home() {
       </form>
 
       <h1>Welcome to Next.js</h1>
+      <Button variant="destructive">Button</Button>
     </main>
   );
 }
