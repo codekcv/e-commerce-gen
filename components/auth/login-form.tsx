@@ -16,7 +16,10 @@ import * as z from "zod";
 import { LoginSchema } from "@/types/login-schema";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { useAction } from "next-safe-action/hooks";
 import Link from "next/link";
+import { emailSignIn } from "@/server/actions/email-sign-in";
+import { cn } from "@/lib/utils";
 
 export default function LoginForm() {
   const form = useForm({
@@ -27,8 +30,11 @@ export default function LoginForm() {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-    console.log("Values:", values);
+  const { execute, status, result } = useAction(emailSignIn, {});
+
+  const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
+    console.log("Executing");
+    execute(values);
   };
 
   return (
@@ -91,7 +97,13 @@ export default function LoginForm() {
               </Button>
             </div>
 
-            <Button type="submit" className="w-full my-2">
+            <Button
+              type="submit"
+              className={cn(
+                "w-full my-2",
+                status === "executing" ? "animate-pulse" : ""
+              )}
+            >
               <span>Login</span>
             </Button>
           </form>
