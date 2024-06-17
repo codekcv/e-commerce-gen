@@ -7,7 +7,7 @@ type Props = { href: string; label: string };
 
 export default function BackButton({ href, label }: Props) {
   return (
-    <Button className="font-medium w-full">
+    <Button className="font-medium w-full" asChild variant="link">
       <Link aria-label={label} href={href}>
         {label}
       </Link>
