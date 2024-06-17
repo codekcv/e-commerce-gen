@@ -10,9 +10,7 @@ export default function LoginForm() {
       backButtonLabel="Create a new account"
       showSocials
     >
-      <div>
-        <h1>Auth Card</h1>
-      </div>
+      <div />
     </AuthCard>
   );
 }
