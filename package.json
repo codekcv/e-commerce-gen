@@ -23,7 +23,7 @@
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.31.2",
     "lucide-react": "^0.395.0",
-    "next": "14.2.4",
+    "next": "14.2.12",
     "next-auth": "^5.0.0-beta.19",
     "next-safe-action": "^7.0.2",
     "pg": "^8.12.0",
